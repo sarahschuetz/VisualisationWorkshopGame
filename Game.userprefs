@@ -1,11 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/animation/bearAnimations.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EventManager.cs">
     <Files>
+      <File FileName="Assets/Scripts/AI/animation/foxAnimations.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/AI/animation/bearAnimations.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/animation/randomAnimations.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/followNavMesh.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/animation/bearAnimations.cs" Line="14" Column="41" />
       <File FileName="Assets/Scripts/AI/moveAround.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AI/animation/foxExit.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EventManager.cs" Line="58" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
