@@ -23,11 +23,11 @@ public class randomAnimations : StateMachineBehaviour {
 
 	// used in Unity to compare Animations
 	// bear
-	// 0 = walk   1 = breath   2 = smell   3 = look   4 = roar   5 = run  7 = Exit
+	// 0 = walk   1 = breath   2 = smell   3 = look   4 = roar   5 = run   6 = jump & kill   7 = Exit
 	private int animationCount = 1;
 
-
-
+	private bool startFollowMovingEventSent = false;
+ 	
 
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -36,7 +36,7 @@ public class randomAnimations : StateMachineBehaviour {
 			this.animator = animator;
 
 			this.gameObject = animator.gameObject;
-			
+
 			// correct likelyhood of animations if they sum up to over 100% and set the right animation ranges
 			this.corrAnimationLikelyhood();
 			this.setAnimationRanges();
@@ -60,18 +60,17 @@ public class randomAnimations : StateMachineBehaviour {
 				this.animationCount = 4;
 				this.animator.SetInteger("animationCount", 4);
 
-			} else if(this.animationCount == 6){
+			} else if(this.animationCount != 6){
 
-				// assign value to animator
-				this.animator.SetInteger("animationCount", 6);
+				if(!startFollowMovingEventSent) {
 
-			} else { 
-				
-				// assign value to animator
-				this.animator.SetInteger("animationCount", 5);
-				
-				Debug.Log("RUN!!!!");
-				EventManager.triggerEvent("startFollowMoving");
+					// assign value to animator
+					this.animator.SetInteger("animationCount", 5);
+
+					Debug.Log("RUN!!!!");
+					EventManager.triggerEvent("startFollowMoving");
+					startFollowMovingEventSent = true;
+				}
 			}
 		}
 	}
@@ -174,6 +173,7 @@ public class randomAnimations : StateMachineBehaviour {
 	void startFollowing() {
 
 		if(this.gameObject.tag == "bear") {
+			//Debug.Log("Start FOLLOWING");
 			this.following = true;
 		}
 	}
@@ -181,8 +181,11 @@ public class randomAnimations : StateMachineBehaviour {
 	void jumpAndKill() {
 		
 		if(this.gameObject.tag == "bear") {
-			Debug.Log("Start KILLing");
+			//Debug.Log("Start KILLing");
 			this.animationCount = 6;
+
+			// assign value to animator
+			this.animator.SetInteger("animationCount", 6);
 		}
 	}
 }

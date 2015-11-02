@@ -48,7 +48,7 @@ public class EventManager: MonoBehaviour {
 
 	public static void stopListening(string eventName, UnityAction listener) {
 
-		if(eventManager == null) {
+		if(eventManager == null || listener == null) {
 			return;
 		}
 

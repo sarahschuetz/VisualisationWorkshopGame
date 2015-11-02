@@ -41,13 +41,15 @@ public class followNavMesh : MonoBehaviour {
 		if(this.distance <= this.followDistance) {
 
 			if(!this.followingMessageSent) {
+
 				this.followingMessageSent = true;
 				EventManager.triggerEvent("startFollowing");
+
 			} else {
 
-				if(this.following) {
+				if(this.following) { 
 
-					Debug.Log("START MOVING");
+					//Debug.Log("START MOVING");
 					agent.Resume();
 					agent.SetDestination(target.position);
 				}
