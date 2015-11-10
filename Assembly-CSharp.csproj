@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\handlContiousnes.cs" />
      <Compile Include="Assets\Scripts\showTextCamera.cs" />
      <Compile Include="Assets\Scripts\showTextObject.cs" />
+     <Compile Include="Assets\Scripts\startFirstPersonCharacter.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

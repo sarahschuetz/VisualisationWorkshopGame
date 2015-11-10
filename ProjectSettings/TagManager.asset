@@ -6,6 +6,8 @@ TagManager:
   tags:
   - showHints
   - bear
+  - torch
+  - UICanvas
   layers:
   - Default
   - TransparentFX
