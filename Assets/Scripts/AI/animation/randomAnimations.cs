@@ -155,54 +155,18 @@ public class randomAnimations : StateMachineBehaviour {
 			}
 		}
 	}
-	
-	// EventManager -- just for bear
-/*	private UnityAction listener01;
-	private UnityAction listener02;
-	//private UnityAction killListener01; 
-	//private UnityAction killListener02;
-	
-	void Awake() {
-		this.listener01 = new UnityAction(startFollowing01);
-		this.listener02 = new UnityAction(startFollowing02);
-		//this.killListener01 = new UnityAction(jumpAndKill01);
-		//this.killListener02 = new UnityAction(jumpAndKill02);
-	}
-	
-	void OnEnable() {
-		EventManager.startListening("startFollowing01", this.listener01);
-		EventManager.startListening("startFollowing02", this.listener02);
-		//EventManager.startListening("jumpAndKill01", this.killListener01);
-		//EventManager.startListening("jumpAndKill02", this.killListener02);
-	}
-	
-	void OnDisable() {
-		EventManager.stopListening("startFollowing01", this.listener01);
-		EventManager.stopListening("startFollowing02", this.listener02);
-		//EventManager.stopListening("jumpAndKill01", this.killListener01);
-		//EventManager.stopListening("jumpAndKill02", this.killListener02);
-	}
-	
-	void startFollowing01() {
-	
-		if(this.gameObject.transform.parent.gameObject.tag == "bear01") {
-			Debug.Log("Start FOLLOWING 1");
-			this.following = true;
-		}
-	}
 
-	void startFollowing02() {
-		
-		if(this.gameObject.transform.parent.gameObject.tag == "bear02") {
-			Debug.Log("Start FOLLOWING 2");
-			this.following = true;
-		}
-	}*/
+	public void stopFollowing() {
+
+		this.following = false;
+		gameObject.GetComponentInParent<followNavMesh>().stopFollowMoving();
+		startFollowMovingEventSent = false;
+		this.animator.SetTrigger("stopFollowing");
+	}
 
 	public void startFollowing() {
 		
 		if(this.gameObject.tag == "bear") {
-			Debug.Log("Start FOLLOWING");
 			this.following = true;
 		}
 	}
@@ -210,7 +174,7 @@ public class randomAnimations : StateMachineBehaviour {
 	public void jumpAndKill() {
 
 		if(this.gameObject.tag == "bear") {
-			//Debug.Log("Start KILLing");
+			
 			this.animationCount = 6;
 			
 			// assign value to animator

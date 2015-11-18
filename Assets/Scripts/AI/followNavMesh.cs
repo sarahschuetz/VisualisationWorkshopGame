@@ -32,7 +32,6 @@ public class followNavMesh : MonoBehaviour {
 		this.followingMessageSent = false;
 		this.following = false;
 		this.randomAnim = gameObject.GetComponentInChildren<Animator>().GetBehaviour<randomAnimations>();
-
 	}
 	
 	// Update is called once per frame
@@ -48,35 +47,14 @@ public class followNavMesh : MonoBehaviour {
 
 				this.followingMessageSent = true;
 
-			/*	switch(gameObject.tag) {
-				case "bear01":
-					EventManager.triggerEvent("startFollowing01");
-					Debug.Log("01");
-					break;
-
-				case "bear02":
-					EventManager.triggerEvent("startFollowing02");
-					Debug.Log("02");
-					break;
-				}*/
-			
 				if(this.randomAnim != null) {
 					this.randomAnim.startFollowing();
 				}
-
-				//Debug.Log(gameObject.GetComponentInChildren<StateMachineBehaviour>());
-
-				//RuntimeAnimatorController controller = gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController;
-
-				//controller
-				//Debug.Log(controller);
-				//.startFollowing();
 
 			} else {
 
 				if(this.following) { 
 
-					//Debug.Log("START MOVING");
 					agent.Resume();
 					agent.SetDestination(target.position);
 				}
@@ -100,6 +78,16 @@ public class followNavMesh : MonoBehaviour {
 	}*/
 	
 	public void startFollowMoving() {
-		this.following = true;;
+		this.following = true;
+	}
+
+	public void stopFollowMoving() {
+		agent.Stop();
+		agent.ResetPath();
+		this.following = false;
+	}
+
+	public void leaveFireplace() {
+		this.followingMessageSent = false;
 	}
 }

@@ -165,8 +165,8 @@ public class SoundManager : MonoBehaviour
 	/// <returns>True if the Audiosource was found and removed.</returns>
 	public bool RemoveAudioSource(AudioSource source)
 	{
-		bool contains = audioSources.Remove(source);
-		
+		bool contains = audioSources.Remove(source); 
+
 		if (contains)
 		{
 			source.Stop();

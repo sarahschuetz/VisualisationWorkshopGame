@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/followNavMesh.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SoundManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/AI/followNavMesh.cs" Line="62" Column="4" />
-      <File FileName="Assets/Scripts/AI/animation/randomAnimations.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/animation/bearAnimations.cs" Line="15" Column="44" />
+      <File FileName="Assets/Scripts/fireScript.cs" Line="24" Column="9" />
+      <File FileName="Assets/Scripts/switchBackgroundMusic.cs" Line="33" Column="8" />
+      <File FileName="Assets/Scripts/SoundManager.cs" Line="169" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

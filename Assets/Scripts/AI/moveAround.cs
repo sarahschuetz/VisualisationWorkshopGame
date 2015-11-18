@@ -66,6 +66,7 @@ public class moveAround : MonoBehaviour {
 	}*/
 
 	public void startMoving() {
+
 		if(!agent.hasPath) {
 			GotoNextPoint();
 		} else {
