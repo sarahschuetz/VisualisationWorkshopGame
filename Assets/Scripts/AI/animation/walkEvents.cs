@@ -3,9 +3,19 @@ using System.Collections;
 
 public class walkEvents : StateMachineBehaviour {
 
+	private GameObject gameObject;
+	private bool firstAnimation = true;
+
 	// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		EventManager.triggerEvent("startMoving");
+
+		if(firstAnimation) {
+			this.gameObject = animator.gameObject;
+
+			this.firstAnimation = false;
+		}
+		//EventManager.triggerEvent("startMoving");
+		gameObject.GetComponentInParent<moveAround>().startMoving();
 		//Debug.Log("start moving");
 	}
 
@@ -16,7 +26,8 @@ public class walkEvents : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		EventManager.triggerEvent("stopMoving");
+		//EventManager.triggerEvent("stopMoving");
+		gameObject.GetComponentInParent<moveAround>().stopMoving();
 		//Debug.Log("stop moving");
 	}
 

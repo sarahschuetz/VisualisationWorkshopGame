@@ -70,11 +70,8 @@ public class showTextObject : MonoBehaviour {
 		//Debug.DrawLine(this.empty.transform.position, this.empty.transform.position + offsetWords * wordOffset, Color.blue);
 
 		if(shown) {
-			foreach (var text in allMessages) {
-
-				empty.transform.LookAt(cam.transform);
-				empty.transform.RotateAround(empty.transform.position, new Vector3(0, 1, 0), 180);
-			}
+			empty.transform.LookAt(cam.transform);
+			empty.transform.RotateAround(empty.transform.position, new Vector3(0, 1, 0), 180);
 		}
 	}
 
@@ -82,10 +79,7 @@ public class showTextObject : MonoBehaviour {
 	/// Shows the text.
 	/// </summary>
 	public void showText()
-	{
-		int count = 0;
-
-		
+	{	
 		foreach (var text in allMessages) {
 		//	Vector3 direction = (cam.transform.position - textPosition).normalized;
 

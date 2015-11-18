@@ -45,17 +45,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\NB_Scripts\Aurora.cs" />
+     <Compile Include="Assets\Scripts\AI\ENDAnimationTrigger.cs" />
      <Compile Include="Assets\Scripts\AI\animation\bearAnimations.cs" />
+     <Compile Include="Assets\Scripts\AI\animation\bearENDAnimation.cs" />
      <Compile Include="Assets\Scripts\AI\animation\foxAnimations.cs" />
      <Compile Include="Assets\Scripts\AI\animation\randomAnimations.cs" />
      <Compile Include="Assets\Scripts\AI\animation\randomAnimations2.cs" />
      <Compile Include="Assets\Scripts\AI\animation\walkEvents.cs" />
+     <Compile Include="Assets\Scripts\AI\dfgh.cs" />
      <Compile Include="Assets\Scripts\AI\followNavMesh.cs" />
      <Compile Include="Assets\Scripts\AI\followSmth.cs" />
      <Compile Include="Assets\Scripts\AI\moveAround.cs" />
-     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
-     <Compile Include="Assets\Scripts\handlContiousnes.cs" />
+     <Compile Include="Assets\Scripts\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\changeMouseCurser.cs" />
      <Compile Include="Assets\Scripts\showTextCamera.cs" />
      <Compile Include="Assets\Scripts\showTextObject.cs" />
      <Compile Include="Assets\Scripts\startFirstPersonCharacter.cs" />

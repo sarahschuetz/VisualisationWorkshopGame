@@ -47,7 +47,7 @@ public class moveAround : MonoBehaviour {
 	}
 
 	// EventManager
-	private UnityAction startListener;
+	/*private UnityAction startListener;
 	private UnityAction stopListener;
 	
 	void Awake() {
@@ -63,9 +63,9 @@ public class moveAround : MonoBehaviour {
 	void OnDisable() {
 		EventManager.stopListening("startMoving", this.startListener);
 		EventManager.stopListening("stopMoving", this.stopListener);
-	}
+	}*/
 
-	void startMoving() {
+	public void startMoving() {
 		if(!agent.hasPath) {
 			GotoNextPoint();
 		} else {
@@ -73,7 +73,7 @@ public class moveAround : MonoBehaviour {
 		}
 	}
 	
-	void stopMoving() {
+	public void stopMoving() {
 		agent.Stop();
 	}
 }

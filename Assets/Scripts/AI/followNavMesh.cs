@@ -20,6 +20,8 @@ public class followNavMesh : MonoBehaviour {
 	private bool followingMessageSent;
 
 	private bool following;
+
+	private randomAnimations randomAnim;
 	
 
 
@@ -29,6 +31,8 @@ public class followNavMesh : MonoBehaviour {
 		this.agent = GetComponent<NavMeshAgent>();
 		this.followingMessageSent = false;
 		this.following = false;
+		this.randomAnim = gameObject.GetComponentInChildren<Animator>().GetBehaviour<randomAnimations>();
+
 	}
 	
 	// Update is called once per frame
@@ -43,7 +47,30 @@ public class followNavMesh : MonoBehaviour {
 			if(!this.followingMessageSent) {
 
 				this.followingMessageSent = true;
-				EventManager.triggerEvent("startFollowing");
+
+			/*	switch(gameObject.tag) {
+				case "bear01":
+					EventManager.triggerEvent("startFollowing01");
+					Debug.Log("01");
+					break;
+
+				case "bear02":
+					EventManager.triggerEvent("startFollowing02");
+					Debug.Log("02");
+					break;
+				}*/
+			
+				if(this.randomAnim != null) {
+					this.randomAnim.startFollowing();
+				}
+
+				//Debug.Log(gameObject.GetComponentInChildren<StateMachineBehaviour>());
+
+				//RuntimeAnimatorController controller = gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController;
+
+				//controller
+				//Debug.Log(controller);
+				//.startFollowing();
 
 			} else {
 
@@ -58,7 +85,7 @@ public class followNavMesh : MonoBehaviour {
 	}
 
 	// EventManager
-	private UnityAction listener; 
+	/*private UnityAction listener; 
 	
 	void Awake() {
 		this.listener = new UnityAction(startMoving);
@@ -70,9 +97,9 @@ public class followNavMesh : MonoBehaviour {
 	
 	void OnDisable() {
 		EventManager.stopListening("startFollowMoving", this.listener);
-	}
+	}*/
 	
-	void startMoving() {
+	public void startFollowMoving() {
 		this.following = true;;
 	}
 }

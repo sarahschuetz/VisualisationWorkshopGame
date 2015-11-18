@@ -53,7 +53,9 @@ public class randomAnimations : StateMachineBehaviour {
 
 		} else { // only important for bear
 
-			EventManager.triggerEvent("stopMoving");
+			//EventManager.triggerEvent("stopMoving");
+
+			gameObject.GetComponentInParent<moveAround>().stopMoving();
 
 			if(animationCount < 4) {
 
@@ -67,8 +69,11 @@ public class randomAnimations : StateMachineBehaviour {
 					// assign value to animator
 					this.animator.SetInteger("animationCount", 5);
 
-					Debug.Log("RUN!!!!");
-					EventManager.triggerEvent("startFollowMoving");
+					//Debug.Log("RUN!!!!");
+					//EventManager.triggerEvent("startFollowMoving");
+
+					gameObject.GetComponentInParent<followNavMesh>().startFollowMoving();
+
 					startFollowMovingEventSent = true;
 				}
 			}
@@ -152,38 +157,62 @@ public class randomAnimations : StateMachineBehaviour {
 	}
 	
 	// EventManager -- just for bear
-	private UnityAction listener; 
-	private UnityAction killListener; 
+/*	private UnityAction listener01;
+	private UnityAction listener02;
+	//private UnityAction killListener01; 
+	//private UnityAction killListener02;
 	
 	void Awake() {
-		this.listener = new UnityAction(startFollowing);
-		this.killListener = new UnityAction(jumpAndKill);
+		this.listener01 = new UnityAction(startFollowing01);
+		this.listener02 = new UnityAction(startFollowing02);
+		//this.killListener01 = new UnityAction(jumpAndKill01);
+		//this.killListener02 = new UnityAction(jumpAndKill02);
 	}
 	
 	void OnEnable() {
-		EventManager.startListening("startFollowing", this.listener);
-		EventManager.startListening("jumpAndKill", this.killListener);
+		EventManager.startListening("startFollowing01", this.listener01);
+		EventManager.startListening("startFollowing02", this.listener02);
+		//EventManager.startListening("jumpAndKill01", this.killListener01);
+		//EventManager.startListening("jumpAndKill02", this.killListener02);
 	}
 	
 	void OnDisable() {
-		EventManager.stopListening("startFollowing", this.listener);
-		EventManager.stopListening("jumpAndKill", this.killListener);
+		EventManager.stopListening("startFollowing01", this.listener01);
+		EventManager.stopListening("startFollowing02", this.listener02);
+		//EventManager.stopListening("jumpAndKill01", this.killListener01);
+		//EventManager.stopListening("jumpAndKill02", this.killListener02);
 	}
 	
-	void startFollowing() {
-
-		if(this.gameObject.tag == "bear") {
-			//Debug.Log("Start FOLLOWING");
+	void startFollowing01() {
+	
+		if(this.gameObject.transform.parent.gameObject.tag == "bear01") {
+			Debug.Log("Start FOLLOWING 1");
 			this.following = true;
 		}
 	}
 
-	void jumpAndKill() {
+	void startFollowing02() {
 		
+		if(this.gameObject.transform.parent.gameObject.tag == "bear02") {
+			Debug.Log("Start FOLLOWING 2");
+			this.following = true;
+		}
+	}*/
+
+	public void startFollowing() {
+		
+		if(this.gameObject.tag == "bear") {
+			Debug.Log("Start FOLLOWING");
+			this.following = true;
+		}
+	}
+
+	public void jumpAndKill() {
+
 		if(this.gameObject.tag == "bear") {
 			//Debug.Log("Start KILLing");
 			this.animationCount = 6;
-
+			
 			// assign value to animator
 			this.animator.SetInteger("animationCount", 6);
 		}
