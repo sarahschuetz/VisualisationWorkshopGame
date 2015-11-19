@@ -57,6 +57,9 @@
      <Compile Include="Assets\Scripts\AI\followSmth.cs" />
      <Compile Include="Assets\Scripts\AI\moveAround.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
+     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Inventory\isCollectable.cs" />
+     <Compile Include="Assets\Scripts\Inventory\isCollectableKey.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\changeMouseCurser.cs" />
      <Compile Include="Assets\Scripts\dieFromBear.cs" />

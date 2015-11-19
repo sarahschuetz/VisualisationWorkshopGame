@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SoundManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory/isCollectable.cs">
     <Files>
-      <File FileName="Assets/Scripts/fireScript.cs" Line="24" Column="9" />
-      <File FileName="Assets/Scripts/switchBackgroundMusic.cs" Line="33" Column="8" />
-      <File FileName="Assets/Scripts/SoundManager.cs" Line="169" Column="3" />
+      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/isCollectable.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
