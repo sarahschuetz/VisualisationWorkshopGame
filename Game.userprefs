@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory/isCollectable.cs">
     <Files>
-      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Inventory/isCollectable.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/isCollectable.cs" Line="12" Column="22" />
+      <File FileName="Assets/Scripts/Inventory/isCollectableKey.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/isCollectableMatch.cs" Line="17" Column="18" />
+      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="121" Column="4" />
+      <File FileName="Assets/Scripts/particleManager.cs" Line="12" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -6,14 +6,14 @@ public class Inventory : MonoBehaviour {
 
 	private List<isCollectable> allObjects;
 	private bool seeInventory = false;
-	//private GUISkin numberSlot;
 
-	//public GUIStyle style;
+	private GameObject lastClickedGameObject;
 	
 	// Use this for initialization
 	void Start () 
 	{
 		this.allObjects = new List<isCollectable>();
+		this.lastClickedGameObject = null;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour {
 	{
 		if(seeInventory)
 		{
-			GUIStyle style = new GUIStyle(GUI.skin.GetStyle("Window")); //Or whatever
+			GUIStyle style = new GUIStyle(GUI.skin.GetStyle("Window"));
 			style.onNormal = style.normal;
 
 			GUI.Window(0, new Rect(10, 10, 80, calculateInventoryHeight()), InventoryGUI, "Inventory", style);
@@ -69,15 +69,22 @@ public class Inventory : MonoBehaviour {
 
 			if(GUI.Button(new Rect(10, yPosition, 60, 50), currentObject.texture)) {
 
-				currentObject.action();
+				if(this.lastClickedGameObject != null) {
 
-				if(!currentObject.forever) {
+					currentObject.action(this.lastClickedGameObject);
+				
 
-					currentObject.number--;
+					if(!currentObject.forever) {
 
-					if(currentObject.number < 1) {
-						remove.Add(currentObject);
+						currentObject.number--;
+
+						if(currentObject.number < 1) {
+							remove.Add(currentObject);
+						}
 					}
+
+					this.seeInventory = false;
+				
 				}
 			}
 
@@ -85,6 +92,8 @@ public class Inventory : MonoBehaviour {
 
 				GUI.Label(new Rect(15, yPosition, 20, 40), currentObject.number.ToString() + "x");
 			}
+
+			yPosition += 55;
 		}
 
 		foreach(isCollectable currentObject in remove) {
@@ -94,8 +103,23 @@ public class Inventory : MonoBehaviour {
 
 	public void addObject(isCollectable currentObject) {
 
+		if(!this.seeInventory) {
+			this.seeInventory = true;
+		}
+
+		this.lastClickedGameObject = null;
+
 		if(!this.allObjects.Contains(currentObject)) {
 			this.allObjects.Add(currentObject);
 		}
+	}
+
+	public void useInventory(GameObject g) {
+
+		if(!this.seeInventory) {
+			this.seeInventory = true;
+		}
+
+		this.lastClickedGameObject = g;
 	}
 }

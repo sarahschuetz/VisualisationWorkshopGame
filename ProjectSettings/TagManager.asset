@@ -9,8 +9,7 @@ TagManager:
   - torch
   - UICanvas
   - bearEND
-  - bear01
-  - bear02
+  - fireplace
   layers:
   - Default
   - TransparentFX

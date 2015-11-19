@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Campfire\Script\FireLightScript.cs" />
      <Compile Include="Assets\NB_Scripts\Aurora.cs" />
      <Compile Include="Assets\Scripts\AI\ENDAnimationTrigger.cs" />
      <Compile Include="Assets\Scripts\AI\animation\bearAnimations.cs" />
@@ -58,14 +59,17 @@
      <Compile Include="Assets\Scripts\AI\moveAround.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Inventory\isClickable.cs" />
      <Compile Include="Assets\Scripts\Inventory\isCollectable.cs" />
      <Compile Include="Assets\Scripts\Inventory\isCollectableKey.cs" />
+     <Compile Include="Assets\Scripts\Inventory\isCollectableMatch.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\changeMouseCurser.cs" />
      <Compile Include="Assets\Scripts\dieFromBear.cs" />
      <Compile Include="Assets\Scripts\fireScript.cs" />
      <Compile Include="Assets\Scripts\inputManager.cs" />
      <Compile Include="Assets\Scripts\menuScript.cs" />
+     <Compile Include="Assets\Scripts\particleManager.cs" />
      <Compile Include="Assets\Scripts\showTextCamera.cs" />
      <Compile Include="Assets\Scripts\showTextObject.cs" />
      <Compile Include="Assets\Scripts\startFirstPersonCharacter.cs" />
@@ -157,6 +161,7 @@
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Wispy Sky\ReadMe.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
